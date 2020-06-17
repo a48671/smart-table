@@ -1,4 +1,4 @@
-export const test = () => {
+export const test = (): void => {
   let qwe = '';
   qwe = ' ';
   const propm = new Promise((resolve) => {
