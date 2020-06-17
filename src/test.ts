@@ -1,9 +1,12 @@
-export const test = () => {
-  let qwe: string = '';
+export const test = (): void => {
+  let qwe = '';
   qwe = ' ';
-  new Promise((resolve, reject) => {
+  const propm = new Promise((resolve) => {
     setTimeout(() => {
-      resolve('Hello' + qwe);
-    })
-  }).then(console.log)
+      const par = `'Hello' ${qwe}`;
+      resolve(par);
+    });
+  });
+
+  propm.then(console.log).catch(console.error);
 };

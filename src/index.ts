@@ -1,3 +1,4 @@
-import { test } from './test';
+import {test} from './test';
 import './scss/index.scss';
+
 test();
