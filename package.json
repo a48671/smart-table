@@ -10,6 +10,9 @@
     "lint:ts": "eslint './src/**/*.ts'",
     "typescript": "tsc"
   },
+  "pre-commit": [
+    "lint:ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/a48671/smart-table.git"
@@ -40,6 +43,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "pre-commit": "^1.2.2",
     "sass": "^1.26.8",
     "sass-loader": "^8.0.2",
     "ts-loader": "^7.0.5",
