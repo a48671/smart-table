@@ -12,43 +12,31 @@
 </head>
 <body>
     <div id="root">
-        <div class="smart-table">
-            <div class="smart-table__header">
-                <input type="text" class="input" value="New table">
-                <div>
-                    <div class="button">
-                        <i class="material-icons">delete</i>
-                    </div>
-                    <div class="button">
-                        <i class="material-icons">exit_to_app</i>
-                    </div>
+        <div class="db">
+            <div class="db__header">
+                <h1>Smart table</h1>
+            </div>
+            <div class="db__new">
+                <div class="db__view">
+                    <a href="#" class="db__create">New <br /> table</a>
                 </div>
             </div>
-            <div class="smart-table__toolbar">
-                <div class="button">
-                    <i class="material-icons">format_bold</i>
+            <div class="db__table db__view">
+                <div class="db__list-header">
+                    <span>Name</span>
+                    <span>Open date</span>
                 </div>
-                <div class="button">
-                    <i class="material-icons">format_italic</i>
-                </div>
-                <div class="button">
-                    <i class="material-icons">format_clear</i>
-                </div>
-                <div class="button">
-                    <i class="material-icons">format_align_left</i>
-                </div>
-                <div class="button">
-                    <i class="material-icons">format_align_center</i>
-                </div>
-                <div class="button">
-                    <i class="material-icons">format_align_right</i>
-                </div>
+                <ul class="db__list">
+                    <li class="db__record">
+                        <a href="#">Name table</a>
+                        <strong>21.04.20</strong>
+                    </li>
+                    <li class="db__record">
+                        <a href="#">Name table</a>
+                        <strong>21.04.20</strong>
+                    </li>
+                </ul>
             </div>
-            <div class="smart-table__formula">
-                <div class="info">fx</div>
-                <div class="input" contenteditable spellcheck="false"></div>
-            </div>
-            <div class="smart-table__table"></div>
         </div>
     </div>
 </body>
