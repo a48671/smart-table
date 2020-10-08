@@ -1,25 +1,33 @@
 import { RootComponentOptionsTypes } from './root-component.types';
 import { Component } from '../../core/component';
-import { $ } from '../../core/dom';
+import { $, DOM } from '../../core/dom';
 
 export class RootComponent {
-  private element: Element | null;
+  private readonly element: DOM;
   public components: Array<typeof Component>;
+  public componentInstances: Array<Component>;
   constructor(selector: string, options: RootComponentOptionsTypes) {
-    this.element = document.querySelector(selector);
+    this.element = $(selector);
     this.components = options.components || [];
+    this.componentInstances = [];
   }
-  public getRoot() {
+  public getRoot(): DOM {
     const root = $.create('div', 'smart-table');
-    this.components.map(Component => {
-      const component = new Component();
+    this.componentInstances = this.components.map(Component => {
       const element = $.create('div', Component.className);
-      element.insertAdjacentHTML('beforeend', component.toHTML())
-      root.append(element);
+      const component = new Component(element);
+      element.html(component.toHTML())
+      if (element.getElement) {
+        root.append(element);
+      }
+      return component;
     });
     return root;
   }
-  public render() {
-    this.element?.append(this.getRoot());
+  public render(): void {
+    if (Boolean(this.getRoot()) && this.element) {
+      this.element.append(this.getRoot());
+      this.componentInstances.forEach(instance => instance.init());
+    }
   }
 }

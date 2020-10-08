@@ -1,1 +1,1 @@
-export { $ } from './dom';
+export { $, DOM } from './dom';
