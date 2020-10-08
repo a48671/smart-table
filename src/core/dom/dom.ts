@@ -19,7 +19,7 @@ export class DOM {
     this.html('');
     return this;
   }
-  on(eventType: string, callback: (event: Event) => void) {
+  on(eventType: string, callback: (event: Event) => void): void {
     this.element?.addEventListener(eventType, callback);
   }
   append(element?: DOM | Element | null): DOM {
